@@ -38,7 +38,7 @@
                         <img src="images/images/user-1.png">
                         <div>
                             <h3>Rayan Walton</h3>
-                            <a href="#">See your profile</a>
+                            <a href="profile.html">See your profile</a>
                         </div>
                     </div>
                     <hr>
@@ -93,7 +93,7 @@
                     <a href="#"><img src="images/images/premium.png">My premium</a>
                 </div>
             </div>
-            <div class="sidebar-activity">
+            <div class="sidebar-activity" id="sidebarActivity">
                 <h3>RECENT</h3>
                 <a href="#"><img src="images/images/recent.png">Web Development</a>
                 <a href="#"><img src="images/images/recent.png">User Interface</a>
@@ -114,6 +114,7 @@
                     <a href="#">Discover more</a>
                 </div>
             </div>
+            <p id="show-more-link" onclick="toggleActivity()">Show more <b>+</b></p>
         </div>
         <!-----------------------Main content---------------------->
         <div class="main-content">
@@ -369,7 +370,7 @@
                 <a href="#">More</a>
 
                 <div class="copyright-msg">
-                    <img src="images/images/logo.png" alt="">
+                    <img src="images/images/logo.png">
                     <p>Linkedup &#169; 2022. All right reserved</p>
                 </div>
             </div>
@@ -385,6 +386,20 @@
             
             profileMenu.classList.toggle("open-menu");
 
+        }
+
+    </script>
+    <script>
+        let sidebarActivity = document.getElementById("sidebarActivity");
+        let moreLink = document.getElementById("show-more-link");
+
+        function toggleActivity(){
+            sidebarActivity.classList.toggle("open-activity");
+            if(sidebarActivity.classList.contains("open-activity")){
+                moreLink.innerHTML = "Show less <b>-<b>";
+            }else{
+                moreLink.innerHTML = "Show more <b>+<b>";
+            }
         }
 
     </script>
